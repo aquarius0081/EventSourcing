@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D895418F-17C1-45D4-8518-D6A4D9DA9648}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Shared", "EventSourcing.Shared\EventSourcing.Shared.csproj", "{ECBFE607-10FE-43C1-9E00-0450FD19F498}"
