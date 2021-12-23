@@ -1,7 +1,8 @@
 ﻿using EventSourcing.Shared;
+using EventSourcing.Shared.Queries;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Worker.Balance.Services;
+using Worker.Balance.Handlers;
 
 namespace Worker.Balance.Controllers
 {
@@ -9,17 +10,17 @@ namespace Worker.Balance.Controllers
     [Route("[controller]")]
     public class AccountBalancesController : ControllerBase
     {
-        private readonly IAccountBalanceService accountBalanceService;
+        private readonly IQueryHandler queryHandler;
 
-        public AccountBalancesController(IAccountBalanceService accountBalanceService)
+        public AccountBalancesController(IQueryHandler queryHandler)
         {
-            this.accountBalanceService = accountBalanceService;
+            this.queryHandler = queryHandler;
         }
 
         [HttpGet]
         public List<AccountDto> GetAllAccounts()
         {
-            return accountBalanceService.GetBalances();
+            return queryHandler.Handle(new GetAllAccountsQuery());
         }
     }
 }

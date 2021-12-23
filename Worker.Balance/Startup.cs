@@ -46,6 +46,7 @@ namespace Worker.Balance
             services.AddTransient<IBalanceQueueRepository, BalanceQueueRepository>();
             services.AddTransient<ICommandHandler, CommandHandler>();
             services.AddTransient<IEventHandler, Worker.Balance.Handlers.EventHandler>();
+            services.AddTransient<IQueryHandler, QueryHandler>();
             services.AddHostedService<BalanceQueueService>();
         }
 
